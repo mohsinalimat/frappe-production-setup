@@ -53,7 +53,7 @@ CHECK PYTHON VERSION
  
 ### STEP 6 Setting up DB Password
 
-*Enter current password for root (enter for none): # PRESS ENTER.*
+*Enter current password for root (enter for none): # PRESS ENTER./n*
 *OK, successfully used password, moving on... .*
 
 
