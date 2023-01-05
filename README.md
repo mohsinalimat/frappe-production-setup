@@ -51,40 +51,60 @@ CHECK PYTHON VERSION
     sudo apt install mariadb-server
     sudo mysql_secure_installation
  
-### STEP 6 Setting up DB Password
+#### Setting up DB Password
 
     Enter current password for root (enter for none): # PRESS ENTER
     OK, successfully used password, moving on...
   
   
-  Switch to unix_socket authentication [Y/n] Y
-  Enabled successfully!
-  Reloading privilege tables..
-   ... Success!
+    Switch to unix_socket authentication [Y/n] Y
+    Enabled successfully!
+    Reloading privilege tables..
+    ... Success!
 
-  Change the root password? [Y/n] Y
-  New password: 
-  Re-enter new password: 
-  Password updated successfully!
-  Reloading privilege tables..
-   ... Success!
+    Change the root password? [Y/n] Y
+    New password: 
+    Re-enter new password: 
+    Password updated successfully!
+    Reloading privilege tables..
+    ... Success!
 
-  Remove anonymous users? [Y/n] Y
-   ... Success!
+    Remove anonymous users? [Y/n] Y
+    ... Success!
 
-   Disallow root login remotely? [Y/n] Y
-   ... Success!
+    Disallow root login remotely? [Y/n] Y
+    ... Success!
 
-   Remove test database and access to it? [Y/n] Y
-   - Dropping test database...
-   ... Success!
-   - Removing privileges on test database...
-   ... Success!
+    Remove test database and access to it? [Y/n] Y
+    - Dropping test database...
+    ... Success!
+    - Removing privileges on test database...
+    ... Success!
 
-   Reload privilege tables now? [Y/n] Y
-   ... Success!
+    Reload privilege tables now? [Y/n] Y
+    ... Success!
 
+### STEP 6 MySQL database development files
 
+    sudo apt-get install libmysqlclient-dev
+    
+### STEP 7 Edit the mariadb configuration ( unicode character encoding )
+
+    sudo nano /etc/mysql/my.cnf
+
+add this to the my.cnf file after first 3 lines
+
+    [mysqld]
+    character-set-client-handshake = FALSE
+    character-set-server = utf8mb4
+    collation-server = utf8mb4_unicode_ci
+
+    [mysql]
+    default-character-set = utf8mb4
+    
+Now press (Ctrl-X) to exit
+
+    sudo service mysql restart
 
 
 
