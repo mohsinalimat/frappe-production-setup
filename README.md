@@ -53,8 +53,8 @@ CHECK PYTHON VERSION
  
 ### STEP 6 Setting up DB Password
 
-*Enter current password for root (enter for none): # PRESS ENTER
-*OK, successfully used password, moving on...
+*Enter current password for root (enter for none): # PRESS ENTER*
+*OK, successfully used password, moving on...*
 
 *Switch to unix_socket authentication [Y/n] Y
   Enabled successfully!
