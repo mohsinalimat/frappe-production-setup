@@ -114,40 +114,12 @@ add this to the my.cnf file after first 3 lines
      character-set-server = utf8mb4
      collation-server = utf8mb4_unicode_ci
      
-#### file should be look like:
-`#
-# These groups are read by MariaDB server.
-# Use it for options that only the server (but not clients) should see
+add this file to the bottom
 
-# this is read by the standalone daemon and embedded servers
-[server]
-user = mysql
-pid-file = /run/mysqld/mysqld.pid
-socket = /run/mysqld/mysqld.sock
-basedir = /usr
-datadir = /var/lib/mysql
-tmpdir = /tmp
-lc-messages-dir = /usr/share/mysql
-bind-address = 127.0.0.1
-query_cache_size = 16M
-log_error = /var/log/mysql/error.log
-# this is only for the mysqld standalone daemon
-[mysqld]
-innodb-file-format=barracuda
-innodb-file-per-table=1
-innodb-large-prefix=1
-character-set-client-handshake = FALSE
-character-set-server = utf8mb4
-collation-server = utf8mb4_unicode_ci
-#
-# * Basic Settings
-#`
-
-
-     [mysql]
- default-character-set = utf8mb4
+    [mysql]
+    default-character-set = utf8mb4
     
-Now press (Ctrl-X) to exit
+#### Now press (Ctrl-X) to exit
 
     sudo service mysql restart
 
