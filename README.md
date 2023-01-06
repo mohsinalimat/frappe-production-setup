@@ -331,8 +331,12 @@ for private repo
     bench restart
     
 *if you are facing any error repeat step 23*
-   
-   
+
+    bench build
+    
+    bench migrate
+  
+  
 *once bench restart successfully you can login to your ERP through your domain **example.com***
 
 *Make sure the domain is mapped with your public ip*
