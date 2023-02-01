@@ -309,6 +309,8 @@ for private repo
 
 ### STEP 22 setup production
 
+    sudo apt-get install supervisor
+
     sudo nano /etc/supervisor/supervisord.conf
     
 *change permission*
