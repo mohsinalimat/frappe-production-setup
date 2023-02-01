@@ -291,7 +291,7 @@ for private repo
     server_name example.com www.example.com;
         
     location / {
-        proxy_pass 127.0.0.1:8888;
+        proxy_pass https://127.0.0.1:8888;
         include proxy_params;
     }
     }
