@@ -1,4 +1,4 @@
-# Frappe/ERPNext Production Setup Ubuntu 22.04
+# Frappe Production Setup Ubuntu 22.04
 
 ## Pre-requisites
 
