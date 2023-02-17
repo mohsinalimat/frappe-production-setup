@@ -1,4 +1,4 @@
-# Frappe Production Setup Ubuntu 22.04
+# Frappe Production Setup
 
 ## Pre-requisites
 
