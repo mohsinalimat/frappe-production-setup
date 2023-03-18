@@ -237,81 +237,11 @@ for private repo
     
 *save and close the file by pressing **CTRL + X**, followed by **Y**, and then **ENTER** to confirm.*
 
-### STEP 20 Install Nginx
-
-    sudo apt update
-    
-    sudo apt install nginx
-
-### STEP 21 Configure firewall
-   
-*Check you current firewall configuration settings:*
-
-    sudo ufw status verbose
-   
-*Open Any port*
-    
-    sudo ufw allow 8888
-    
-    sudo ufw allow http
-    
-    sudo ufw allow https
-    
-    sudo ufw allow in "Nginx Full"
-    
-*if you want you can check firewall configuration again*
-    
-    sudo ufw status verbose
-   
-### STEP 22 Configure Nginx
-   
-    sudo ufw allow 'Nginx HTTP'
-    
-    systemctl status nginx
-    
-#### Output
-    ● nginx.service - A high performance web server and a reverse proxy server
-     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
-     Active: active (running) since Mon 2022-08-29 06:52:46 UTC; 39min ago
-       Docs: man:nginx(8)
-    Main PID: 9919 (nginx)
-      Tasks: 2 (limit: 2327)
-     Memory: 2.9M
-        CPU: 50ms
-     CGroup: /system.slice/nginx.service
-             ├─9919 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"
-             └─9920 "nginx: worker process
-
-### STEP 22 Configuring your Server Block
-
-    sudo nano /etc/nginx/sites-available/example.com
-    
-*Insert the following into your new file, making sure to replace **example.com** with your **domain_name** and **127.0.0.1** with your **server public       ip address***
-   
-    server {
-    listen 80;
-    listen [::]:80;
-
-    server_name example.com www.example.com;
-        
-    location / {
-        proxy_pass https://127.0.0.1:8888;
-        include proxy_params;
-    }
-    }
-*Replace **example.com** with your **domain_name***
-   
-    sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
-*You can now test your configuration file for syntax errors:*
-   
-    sudo nginx -t
-   
-*With no problems reported, restart Nginx to apply your changes:*
-   
-    sudo systemctl restart nginx
 
 
-### STEP 22 setup production
+### STEP 20 setup production
+
+    sudo chmod o+x /home/[bench folder]
 
     sudo apt-get install supervisor
 
@@ -321,10 +251,6 @@ for private repo
     
     chmod=0777
 ***Ctrl + x** type **y** then press **Enter** to save and exit*
-
-    bench set-nginx-port [site_name] 8888
-    
-    bench setup nginx
     
     sudo service nginx reload
     
@@ -333,7 +259,7 @@ for private repo
 #### imp: accept all the questions 
     
     
-### STEP 23 Enable production
+### STEP 21 Enable production
 
     sudo bench setup production [username]
     
@@ -341,7 +267,7 @@ for private repo
     
     bench restart
     
-*if you are facing any error repeat step 23*
+*if you are facing any error repeat step 21*
 
     bench build
     
