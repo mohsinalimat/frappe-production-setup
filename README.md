@@ -191,7 +191,7 @@ for private repo
 
     bench new-site [site-name]
  *for production setup use your site name here
- *Example: if your site name is abcd.com then
+ Example:
  > bench new-site abcd.com
     
 ### STEP 16 install ERPNext
