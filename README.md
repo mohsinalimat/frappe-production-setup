@@ -190,6 +190,7 @@ for private repo
 ### STEP 15 create a site in frappe bench
 
     bench new-site [site-name]
+        > sdgfdgfg
     
 ### STEP 16 install ERPNext
 
